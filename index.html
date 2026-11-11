@@ -174,11 +174,11 @@ h1 .hl { background: linear-gradient(transparent 58%, var(--hl) 58%); padding: 0
 /* 글쓰기 화면 */
 .write { align-items: center; gap: 24px; padding-block: 16px 8px; text-align: center; }
 .write-kicker { font-family: var(--font-display); color: var(--accent); font-size: 22px; margin: 0; }
-.manuscript { display: flex; flex-wrap: wrap; justify-content: center; max-width: 100%; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+.manuscript { display: flex; flex-wrap: wrap; justify-content: center; max-width: 100%; padding: 2px 0 0 2px; }
 .manuscript span {
   width: clamp(40px, 8.4vw, 76px); aspect-ratio: 1; display: grid; place-items: center;
   font-family: var(--font-display); font-size: clamp(26px, 5.6vw, 52px);
-  border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); background: var(--card);
+  border: 2px solid var(--accent); margin: -2px 0 0 -2px; background: var(--card);
 }
 .write .help { max-width: 560px; width: 100%; }
 .timer-box { display: flex; flex-direction: column; gap: 12px; align-items: center; background: var(--card); border: 2px solid var(--line); border-radius: 20px; padding: 16px 20px; width: min(560px, 100%); }
@@ -443,9 +443,9 @@ h1 .hl { background: linear-gradient(transparent 58%, var(--hl) 58%); padding: 0
       ctx.textAlign = "right"; ctx.textBaseline = "middle";
       var label = items[i].key, fs = size * 0.058;
       ctx.font = fs + "px Jua, 'Gowun Dodum', sans-serif";
-      var maxW = r * 0.6;
+      var maxW = r * 0.52;
       while (ctx.measureText(label).width > maxW && fs > 10) { fs -= 1; ctx.font = fs + "px Jua, 'Gowun Dodum', sans-serif"; }
-      ctx.fillText(label, r - ring - size * 0.04, 0);
+      ctx.fillText(label, r - ring - size * 0.1, 0);
       ctx.restore();
     }
     // 바깥 테두리와 점
